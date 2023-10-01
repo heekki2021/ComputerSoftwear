@@ -1,3 +1,2 @@
-﻿  testing2.cpp
-C:\Homework\ComputerSoftwear\3week-actioncommand\testing2.cpp(15,13): error C3861: 'putchar': 식별자를 찾을 수 없습니다.
-C:\Homework\ComputerSoftwear\3week-actioncommand\testing2.cpp(18,9): error C3861: 'putchar': 식별자를 찾을 수 없습니다.
+﻿  main.cpp
+  3week-actioncommand.vcxproj -> C:\Homework\ComputerSoftwear\3week-actioncommand\x64\Debug\3week-actioncommand.exe

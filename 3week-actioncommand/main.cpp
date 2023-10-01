@@ -1,76 +1,101 @@
-//#include<iostream>
-//#include <windows.h>
-//
-//
-//using std::cout;
-//using std::cin;
-//using std::endl;
-//
-//int main(void) {
-//	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-//
-//	// 0x04는 전경색(텍스트 색상)을 빨간색으로, 0x80은 배경색을 빨간색으로 설정합니다.
-//	SetConsoleTextAttribute(hConsole, 0x84);
-//
-//	// 빨간색 배경 위에 빈 공간(박스)를 출력
-//	std::cout << "      " << std::endl;
-//	std::cout << "      " << std::endl;
-//	std::cout << "      " << std::endl;
-//
-//	// 속성을 원래대로 복원
-//	//SetConsoleTextAttribute(hConsole, 7); // 7은 기본 색상입니다.
-//
-//	return 0;
-//
-//
-//	while (true)
-//	{
-//
-//	}
-//	return 0;
-//
-//
-//	//while (true)
-//	//{
-//	//	for (int i = 0; i < 50; i++) {
-//	//		std::wcout << L"\u2B1B" << std::endl;
-//
-//	//		for (int j = 0; i < 80; j++) {
-//
-//	//		}
-//	//	}
-//	//}
-//}
-//
-//
 #include <iostream>
 #include <windows.h>
+#include "queue.cpp"
+#include <chrono>
+#include <thread>
+
+std::thread waitingThread;
+
+int timeCheck = 0;
+
+
+Queue q; //전역 버퍼용 큐
+
+int keyInputCheck() {
+    for (int i = 8; i <= 255; i++) {
+        if (GetAsyncKeyState(i) & 0x8000) {
+            std::cout << i << std::endl;
+            q.push(i);
+            return 0;
+        }
+    }
+    return 0;
+
+}
+
+void waiting() {
+    this_thread::sleep_for(std::chrono::seconds(3));
+    timeCheck = 3;
+}
+
+void threadCaller()
+{
+    waitingThread = std::thread(waiting);
+}
+
+int buffer(int keyCode) {
+    q.push(keyCode);
+    std::cout << "3초 동안 대기합니다. " << std::endl;
+    threadCaller();
+    std::cout << "testing1" << std::endl;
+
+    while (timeCheck == 0) {
+
+        keyInputCheck();
+        Sleep(100);
+
+    }
+    std::cout << "testing3" << std::endl;
+
+    std::cout << "입력값은 = " << std::endl;
+    q.print();
+    return 0;
+}
+
+
+
+
 
 int main() {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    int check = 0;
+    int keyPress = 0;
 
 
-
-    for (int i = 0; i < 51; i++) {
+    while (true) {
+        for (int i = 8; i <= 255; i++) {
+            if (GetAsyncKeyState(i) & 0x8000) {
+                std::cout << "키가 눌렸다" << std::endl;
+                buffer(i);
+                break;
+            } 
+        }
         
+        
+        while (!q.isEmpty()) {
+            q.pop();
+        }
+        timeCheck = 0;
+        //waitingThread.join();
+
     }
+    
+    int a;
+
+        std::cin >> a;
 
 
-
-
-
-
-
-    // 0x40은 배경색을 빨간색으로 설정합니다.
-    SetConsoleTextAttribute(hConsole, 0x40);
-
-    // 빨간색 배경 위에 빈 공간(박스)를 출력
-    std::cout << L"\u2B1B" << std::endl;
-    std::cout << L"\u2B1B" << std::endl;
-
-
-    // 속성을 원래대로 복원
-    SetConsoleTextAttribute(hConsole, 7); // 7은 기본 색상입니다.
+  /*  Queue q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(11);
+    q.push(20);
+    q.print();
+    q.pop();
+    q.pop();
+    q.pop();
+    q.print();*/
 
     return 0;
+   
 }
