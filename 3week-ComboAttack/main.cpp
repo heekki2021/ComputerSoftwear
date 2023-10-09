@@ -15,18 +15,25 @@ int keyPressed = 0;
 Queue q; //전역 버퍼용 큐
 
 
+//int keyInputCheck() {
+//    
+//        for (int i = 8; i <= 255; i++) {
+//            if (i != VK_ESCAPE && (GetAsyncKeyState(i) & 0x8001) && (keyPressed == 0)) {
+//                std::cout << i << std::endl;
+//                q.push(i);
+//                std::cout << "키 down" << std::endl;
+//                keyPressed = 1;
+//                return 0;
+//            }
+//        }
+//        return 0;
+//}
+
+
 int keyInputCheck() {
+    int keyValue = 0;
+    if(GetAsyncKeyState(keyValue))
     
-        for (int i = 8; i <= 255; i++) {
-            if (i != VK_ESCAPE && (GetAsyncKeyState(i) & 0x8001) && (keyPressed == 0)) {
-                std::cout << i << std::endl;
-                q.push(i);
-                std::cout << "키 down" << std::endl;
-                keyPressed = 1;
-                return 0;
-            }
-        }
-        return 0;
 }
 
 int nonKeyInputCheck() {
