@@ -1,25 +1,18 @@
 ﻿  main.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(55,14): error C2672: 'invoke': 일치하는 오버로드된 함수가 없습니다.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\type_traits(1756,19): message : 'unknown-type std::invoke(_Callable &&,_Ty1 &&,_Types2 &&...) noexcept(<expr>)'일 수 있습니다.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(55,14): message : 'unknown-type std::invoke(_Callable &&,_Ty1 &&,_Types2 &&...) noexcept(<expr>)': 3개의 인수가 필요합니다. 1개가 제공되었습니다.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\type_traits(1750,19): message : 또는       'unknown-type std::invoke(_Callable &&) noexcept(<expr>)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(55,14): message : 함수 템플릿 'unknown-type std::invoke(_Callable &&) noexcept(<expr>)'을(를) 특수화하지 못했습니다.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(55,14): message : 다음 템플릿 인수 사용:
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(55,14): message : '_Callable=int (__cdecl *)(int)'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\type_traits(1751,47): message : '_Callable': 호출에 인수가 너무 적습니다.
-          with
-          [
-              _Callable=int (__cdecl *)(int)
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(62,17): message : 컴파일되는 함수 템플릿 인스턴스화 'unsigned int std::thread::_Invoke<_Tuple,0>(void *) noexcept'에 대한 참조를 확인하세요.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(71,40): message : 컴파일되는 함수 템플릿 인스턴스화 'unsigned int (__cdecl *std::thread::_Get_invoke<_Tuple,0>(std::integer_sequence<size_t,0>) noexcept)(void *)'에 대한 참조를 확인하세요.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(88,9): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::thread::_Start<int(__cdecl &)(int),>(_Fn)'에 대한 참조를 확인하세요.
-          with
-          [
-              _Fn=int (__cdecl &)(int)
-          ]
-C:\Homework\ComputerSoftwear\3week-ComboAttack\main.cpp(103,21): message : 컴파일되는 함수 템플릿 인스턴스화 'std::thread::thread<int(__cdecl &)(int),,0>(_Fn)'에 대한 참조를 확인하세요.
-          with
-          [
-              _Fn=int (__cdecl &)(int)
-          ]
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(102,6): error C2182: 'threadCaller3': 이 'void' 사용은 유효하지 않습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(102,20): error C2065: 't1': 선언되지 않은 식별자입니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(102,24): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(103,10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(103,8): error C2440: '초기화 중': 'std::thread'에서 'int'(으)로 변환할 수 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(103,8): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,7): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,8): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,5): error C2086: 'int t1': 재정의
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(103,5): message : 't1' 선언을 참조하십시오.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(104,8): error C2146: 구문 오류: ';'이(가) 'join' 식별자 앞에 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(105,1): error C2059: 구문 오류: '}'
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(105,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(109,12): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+D:\Homework2023\ComputerSoftwear\3week-ComboAttack\main.cpp(109,12): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
