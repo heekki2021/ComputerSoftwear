@@ -14,7 +14,7 @@ int keyPressed = 0;
 
 Queue q; //전역 버퍼용 큐
 
-
+//예약되지 않은 키 0
 //int keyInputCheck() {
 //    
 //        for (int i = 8; i <= 255; i++) {
